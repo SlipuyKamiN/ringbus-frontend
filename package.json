@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-project-template",
+  "name": "ringbus-frontend",
   "version": "0.1.0",
-  "homepage": "https://slipuykamin.github.io/nextjs-project-template/",
+  "homepage": "https://slipuykamin.github.io/ringbus-frontend/",
   "private": true,
   "scripts": {
     "dev": "next start",
