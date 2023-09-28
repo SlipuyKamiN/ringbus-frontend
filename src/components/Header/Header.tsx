@@ -11,6 +11,7 @@ import DropMenu from "./DropMenu";
 import { navListData } from "./navListData";
 import Link from "next/link";
 import NavLink from "components/Shared/NavLink";
+import UserMenu from "./UserMenu";
 
 const Header = () => {
   return (
@@ -21,11 +22,12 @@ const Header = () => {
             <Image src={pageLogoPath} alt="page logo" width={150} height={50} />
           </Link>
           <HeaderList>
-            {navListData.map(({ text, href }) => (
+            {navListData.map(({ content, href }) => (
               <ListItem key={href}>
-                <NavLink href={href}>{text}</NavLink>
+                <NavLink href={href}>{content}</NavLink>
               </ListItem>
             ))}
+            <UserMenu />
           </HeaderList>
         </HeaderWrapper>
         <DropMenu />

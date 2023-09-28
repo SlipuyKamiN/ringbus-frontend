@@ -1,7 +1,13 @@
 export const navListData = [
-  { text: "Головна", href: "/" },
-  { text: "Знайти перевізника", href: "/order" },
-  { text: "Маршрути", href: "/routes" },
-  { text: "Обрані", href: "/favorites" },
-  { text: "Про нас", href: "/about-us" },
+  { content: "Головна", href: "/" },
+  { content: "Знайти перевізника", href: "/order" },
+  { content: "Маршрути", href: "/routes" },
+  { content: "Обрані", href: "/favorites" },
+  { content: "Про нас", href: "/about-us" },
+];
+
+export const userMenuNavData = [
+  { content: "Мої маршрути", href: "/my-routes" },
+  { content: "Обрані", href: "/my-favorites" },
+  { content: "Мій профіль", href: "/my-profile" },
 ];

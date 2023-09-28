@@ -32,7 +32,7 @@ export const HeaderList = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  a {
+  & > a {
     display: block;
     padding: 18px 0;
     border-bottom: 2px solid transparent;
