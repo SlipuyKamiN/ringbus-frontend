@@ -11,7 +11,6 @@ import DropMenu from "./DropMenu";
 import { navListData } from "./navListData";
 import Link from "next/link";
 import NavLink from "components/Shared/NavLink";
-import UserMenu from "./UserMenu";
 
 const Header = () => {
   return (
@@ -27,7 +26,6 @@ const Header = () => {
                 <NavLink href={href}>{content}</NavLink>
               </ListItem>
             ))}
-            <UserMenu />
           </HeaderList>
         </HeaderWrapper>
         <DropMenu />
