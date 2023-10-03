@@ -37,10 +37,10 @@ const DropMenu = () => {
       </DropMenuHeader>
       <DropMenuNav data-nav className={!isNavOpen ? "is-hidden" : ""}>
         <MenuList className="drop-menu__list">
-          {navListData.map(({ href, text }) => (
+          {navListData.map(({ href, content }) => (
             <MenuItem key={href}>
               <NavLink href={href} onClick={toggleMenu}>
-                {text}
+                {content}
               </NavLink>
             </MenuItem>
           ))}

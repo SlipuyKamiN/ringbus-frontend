@@ -1,6 +1,5 @@
 import Image from "next/image";
 import nextJsLogoPath from "../../public/next.svg";
-import Link from "next/link";
 import Container from "components/Shared/Container";
 
 const Home = () => {
@@ -9,9 +8,8 @@ const Home = () => {
       <Container>
         <h1>
           <Image src={nextJsLogoPath} alt="page logo" width={150} />
-          Project Template Homepage
+          RingBus International
         </h1>
-        <Link href="pagePath">Next page link</Link>
       </Container>
     </section>
   );

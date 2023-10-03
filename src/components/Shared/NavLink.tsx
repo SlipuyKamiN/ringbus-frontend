@@ -17,7 +17,10 @@ const NavLink = ({
   onClick?: MouseEventHandler;
 }) => {
   const pathname = usePathname();
-  className = pathname === href ? className + " active" : className;
+
+  className = pathname.substring(1).split("/").includes(href.substring(1))
+    ? className + " active"
+    : className;
 
   return (
     <Link href={href} className={className} onClick={onClick} {...props}>

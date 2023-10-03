@@ -32,8 +32,10 @@ export const HeaderList = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  a {
-    display: block;
+  & > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 18px 0;
     border-bottom: 2px solid transparent;
 

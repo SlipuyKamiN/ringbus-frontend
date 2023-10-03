@@ -21,9 +21,9 @@ const Header = () => {
             <Image src={pageLogoPath} alt="page logo" width={150} height={50} />
           </Link>
           <HeaderList>
-            {navListData.map(({ text, href }) => (
+            {navListData.map(({ content, href }) => (
               <ListItem key={href}>
-                <NavLink href={href}>{text}</NavLink>
+                <NavLink href={href}>{content}</NavLink>
               </ListItem>
             ))}
           </HeaderList>

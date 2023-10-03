@@ -1,7 +1,8 @@
 export const navListData = [
-  { text: "Головна", href: "/" },
-  { text: "Знайти перевізника", href: "/order" },
-  { text: "Маршрути", href: "/routes" },
-  { text: "Обрані", href: "/favorites" },
-  { text: "Про нас", href: "/about-us" },
+  { content: "Головна", href: "/" },
+  { content: "Знайти перевізника", href: "/order" },
+  { content: "Маршрути", href: "/routes" },
+  { content: "Про нас", href: "/about-us" },
+  { content: "Перевізник", href: "/transporter" },
+  { content: "Пасажир", href: "/passanger" },
 ];
