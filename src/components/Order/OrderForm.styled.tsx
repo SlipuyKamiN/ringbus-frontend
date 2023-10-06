@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import { colors, transition } from "styles/common/vars";
 
 export const Form = styled.form`
+  display: flex;
+
   border-radius: 15px;
   padding: 15px;
 
@@ -13,14 +15,14 @@ export const Form = styled.form`
     2px 6px 8px rgba(0, 0, 0, 0.32);
 `;
 
-export const ServiceTypeLabel = styled.label`
+export const OrderTypeLabel = styled.label`
   cursor: pointer;
   display: flex;
 
   border-radius: 4px;
   color: ${colors.primaryWhite};
 
-  & input:checked + .route-form__service-type-wrapper {
+  & input:checked + span {
     border-color: ${colors.primaryBrandColor};
     color: ${colors.primaryBrandColor};
   }
@@ -35,7 +37,7 @@ export const HiddenRadioButton = styled.input`
   opacity: 0;
 `;
 
-export const ServiceTypeText = styled.span`
+export const OrderTypeText = styled.span`
   border: 2px solid ${colors.primaryWhite};
   border-radius: 15px;
   padding: 10px;
@@ -51,4 +53,8 @@ export const ServiceTypeText = styled.span`
     border-color: ${colors.primaryBrandColor};
     color: ${colors.primaryBrandColor};
   }
+`;
+
+export const SelectorWrapper = styled.div`
+df
 `;

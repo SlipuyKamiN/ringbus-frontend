@@ -1,5 +1,4 @@
 import Container from "components/Shared/Container";
-// import pageLogoPath from "images/ring-bus-logo.svg";
 import PageLogoIcon from "images/ring-bus-logo.svg";
 import {
   HeaderList,
@@ -7,7 +6,6 @@ import {
   ListItem,
   PageHeader,
 } from "./Header.styled";
-// import Image from "next/image";
 import DropMenu from "./DropMenu";
 import { navListData } from "./navListData";
 import Link from "next/link";
