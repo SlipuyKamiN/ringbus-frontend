@@ -4,5 +4,5 @@ export interface Order {
   orderType: OrderTypes;
   origin: string;
   destination: string;
-  departingDate: number;
+  departingDate: Date;
 }

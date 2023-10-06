@@ -1,10 +1,14 @@
 import Select from "react-select";
 import { groupedCities } from "./orderData";
 import {
+  DateSelector,
+  ErrMessage,
   Form,
   HiddenRadioButton,
   OrderTypeLabel,
   OrderTypeText,
+  SearchButton,
+  SelectorWrapper,
 } from "./OrderForm.styled";
 import ParcelIcon from "images/icons/parcel.svg";
 import SeatbeltIcon from "images/icons/seatbelt.svg";
@@ -12,24 +16,32 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { orderSchema } from "schemas/orderSchema";
 import { Order } from "types/orderType";
-import DatePicker from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import uk from "date-fns/locale/uk";
+import { BsSearch } from "react-icons/bs";
+registerLocale("uk", uk);
 
 const initialOrderData = {
   orderType: "seat",
   origin: "",
   destination: "",
-  departingDate: new Date().getTime(),
+  departingDate: new Date(),
 };
 
 const OrderForm = () => {
-  const { register, handleSubmit, control } = useForm({
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm({
     defaultValues: initialOrderData,
     resolver: yupResolver(orderSchema),
   });
 
   const onSubmit = (data: Order) => {
-    console.log(data);
+    console.log({ ...data, departingDate: data.departingDate.getTime() });
   };
 
   console.log("wqe");
@@ -67,7 +79,7 @@ const OrderForm = () => {
       </div>
       <div>
         <h2>Оберіть маршрут</h2>
-        <div>
+        <SelectorWrapper>
           <label htmlFor="origin">Звідки:</label>
           <Controller
             control={control}
@@ -83,8 +95,9 @@ const OrderForm = () => {
             )}
             name={"origin"}
           />
-        </div>
-        <div>
+          {errors.origin && <ErrMessage>{errors.origin.message}</ErrMessage>}
+        </SelectorWrapper>
+        <SelectorWrapper>
           <label htmlFor="origin">Куди:</label>
           <Controller
             control={control}
@@ -100,17 +113,22 @@ const OrderForm = () => {
             )}
             name={"destination"}
           />
-        </div>
-        <div>
+          {errors.destination && (
+            <ErrMessage>{errors.destination.message}</ErrMessage>
+          )}
+        </SelectorWrapper>
+        <SelectorWrapper>
           <label htmlFor="origin">Дата відправлення:</label>
           <Controller
             render={({ field: { value, onChange } }) => (
               <DatePicker
-                dateFormat="d MMM yyyy"
+                dateFormat="d MMMM yyyy"
+                locale="uk"
                 selected={value}
                 minDate={new Date()}
-                onChange={(date) => onChange(date.getTime())}
+                onChange={onChange}
                 showTimeSelect={false}
+                customInput={<DateSelector />}
                 todayButton="Today"
                 dropdownMode="select"
                 placeholderText="Click to select time"
@@ -119,10 +137,17 @@ const OrderForm = () => {
             )}
             control={control}
             name="departingDate"
-            required
           />
-        </div>
-        <button type="submit">++</button>
+          {errors.departingDate && (
+            <ErrMessage>{errors.departingDate.message}</ErrMessage>
+          )}
+        </SelectorWrapper>
+      </div>
+      <div>
+        <SearchButton type="submit">
+          <BsSearch />
+          Знайти перевізника
+        </SearchButton>
       </div>
     </Form>
   );
