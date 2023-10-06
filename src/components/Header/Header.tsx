@@ -19,7 +19,6 @@ const Header = () => {
       <Container>
         <HeaderWrapper>
           <Link href="/" aria-label="home page link">
-            {/* <Image src={pageLogoPath} alt="page logo" width={150} priority /> */}
             <PageLogoIcon />
           </Link>
           <HeaderList>

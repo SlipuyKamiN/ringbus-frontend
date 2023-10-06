@@ -51,4 +51,8 @@ export const ServiceTypeText = styled.span`
     border-color: ${colors.primaryBrandColor};
     color: ${colors.primaryBrandColor};
   }
+
+  svg {
+    fill: currentColor;
+  }
 `;

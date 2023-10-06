@@ -7,11 +7,9 @@ import {
   ServiceTypeText,
 } from "./OrderForm.styled";
 import ParcelIcon from "images/icons/parcel.svg";
-// import SeatbeltIcon from "images/icons/seatbelt.svg";
+import SeatbeltIcon from "images/icons/seatbelt.svg";
 
 const OrderForm = () => {
-  console.log(ParcelIcon);
-
   return (
     <Form autoComplete="off" className="order-form">
       <div className="route-form__service">
@@ -26,7 +24,7 @@ const OrderForm = () => {
             className="visually-hidden"
           />
           <ServiceTypeText className="route-form__service-type-wrapper">
-            {/* <SeatbeltIcon /> */}
+            <SeatbeltIcon />
             Зайняти місце
           </ServiceTypeText>
         </ServiceTypeLabel>
@@ -39,7 +37,7 @@ const OrderForm = () => {
             className="visually-hidden"
           />
           <ServiceTypeText className="route-form__service-type-wrapper">
-            {/* <ParcelIcon /> */}
+            <ParcelIcon />
             Відправити посилку
           </ServiceTypeText>
         </ServiceTypeLabel>
