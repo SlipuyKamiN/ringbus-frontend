@@ -1,12 +1,11 @@
 import Container from "components/Shared/Container";
-import pageLogoPath from "images/ring-bus-logo.svg";
+import PageLogoIcon from "images/ring-bus-logo.svg";
 import {
   HeaderList,
   HeaderWrapper,
   ListItem,
   PageHeader,
 } from "./Header.styled";
-import Image from "next/image";
 import DropMenu from "./DropMenu";
 import { navListData } from "./navListData";
 import Link from "next/link";
@@ -18,7 +17,7 @@ const Header = () => {
       <Container>
         <HeaderWrapper>
           <Link href="/" aria-label="home page link">
-            <Image src={pageLogoPath} alt="page logo" width={150} height={50} />
+            <PageLogoIcon />
           </Link>
           <HeaderList>
             {navListData.map(({ content, href }) => (

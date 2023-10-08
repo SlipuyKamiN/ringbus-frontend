@@ -7,12 +7,12 @@ import {
   MenuList,
   MobileDropMenu,
 } from "./DropMenu.styled";
-import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
-import pageLogoPath from "images/ring-bus-logo.svg";
+import PageLogoIcon from "images/ring-bus-logo.svg";
 import { useState } from "react";
 import { navListData } from "./navListData";
 import NavLink from "components/Shared/NavLink";
+import Link from "next/link";
 
 const DropMenu = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -24,9 +24,9 @@ const DropMenu = () => {
   return (
     <MobileDropMenu>
       <DropMenuHeader>
-        <a href="/" aria-label="home page link">
-          <Image src={pageLogoPath} alt="page logo" width={150} height={50} />
-        </a>
+        <Link href="/" aria-label="home page link">
+          <PageLogoIcon />
+        </Link>
         <MenuButton
           type="button"
           onClick={toggleMenu}
