@@ -4,6 +4,7 @@ import {
   DateSelector,
   ErrMessage,
   Form,
+  FormTitle,
   HiddenRadioButton,
   OrderTypeLabel,
   OrderTypeText,
@@ -44,8 +45,6 @@ const OrderForm = () => {
     console.log({ ...data, departingDate: data.departingDate.getTime() });
   };
 
-  console.log("wqe");
-
   return (
     <Form
       autoComplete="off"
@@ -53,7 +52,7 @@ const OrderForm = () => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <div>
-        <h2>Оберіть послугу</h2>
+        <FormTitle>Оберіть послугу</FormTitle>
         <OrderTypeLabel>
           <HiddenRadioButton
             {...register("orderType")}
@@ -78,7 +77,7 @@ const OrderForm = () => {
         </OrderTypeLabel>
       </div>
       <div>
-        <h2>Оберіть маршрут</h2>
+        <FormTitle>Оберіть маршрут</FormTitle>
         <SelectorWrapper>
           <label htmlFor="origin">Звідки:</label>
           <Controller
@@ -91,6 +90,7 @@ const OrderForm = () => {
                 ref={ref}
                 classNamePrefix="city-select"
                 options={groupedCities}
+                placeholder="Місто відправлення"
               />
             )}
             name={"origin"}
@@ -109,6 +109,7 @@ const OrderForm = () => {
                 ref={ref}
                 classNamePrefix="city-select"
                 options={groupedCities}
+                placeholder="Місто прибуття"
               />
             )}
             name={"destination"}

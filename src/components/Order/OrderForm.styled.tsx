@@ -30,6 +30,11 @@ export const Form = styled.form`
   }
 `;
 
+export const FormTitle = styled.h2`
+  font-size: 28px;
+  font-weight: 700;
+`;
+
 export const OrderTypeLabel = styled.label`
   cursor: pointer;
   display: flex;
