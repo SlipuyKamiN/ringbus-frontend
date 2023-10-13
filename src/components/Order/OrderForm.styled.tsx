@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "@emotion/styled";
 import { colors, transition } from "styles/common/vars";
 
@@ -5,16 +7,6 @@ export const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
   row-gap: 20px;
-
-  border-radius: 15px;
-  padding: 15px;
-
-  text-align: center;
-
-  background-color: ${colors.primaryBlackAlpha};
-  backdrop-filter: blur(4px);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 6px 6px rgba(0, 0, 0, 0.12),
-    2px 6px 8px rgba(0, 0, 0, 0.32);
 
   & > div {
     display: flex;
@@ -99,6 +91,7 @@ export const ErrMessage = styled.span`
 
 export const SearchButton = styled.button`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin: 0 auto;
   gap: 5px;

@@ -1,15 +1,15 @@
-"use client";
-
 import { Hero } from "components/Home/HomeSection.styled";
+import FoundList from "components/Order/FoundList/FoundList";
+import { ContentWrapper } from "components/Order/FoundList/FoundList.styled";
 import OrderForm from "components/Order/OrderForm";
-import Container from "components/Shared/Container";
 
 const OrderPage = () => {
   return (
     <Hero>
-      <Container>
+      <ContentWrapper>
         <OrderForm />
-      </Container>
+        <FoundList />
+      </ContentWrapper>
     </Hero>
   );
 };

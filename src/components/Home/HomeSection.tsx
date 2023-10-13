@@ -1,4 +1,4 @@
-import Container from "../Shared/Container";
+import { Container } from "../Shared/Container.styled";
 import {
   FindLink,
   Hero,
