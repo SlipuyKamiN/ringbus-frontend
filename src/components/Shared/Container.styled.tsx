@@ -1,7 +1,7 @@
 "use client";
 import styled from "@emotion/styled";
 
-export const ContainerWrapper = styled.div`
+export const Container = styled.div`
   max-width: 480px;
   margin: 0 auto;
   padding: 0 15px;

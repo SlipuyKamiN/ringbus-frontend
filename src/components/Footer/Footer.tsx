@@ -1,4 +1,4 @@
-import Container from "components/Shared/Container";
+import { Container } from "components/Shared/Container.styled";
 
 const Footer = () => {
   return (
