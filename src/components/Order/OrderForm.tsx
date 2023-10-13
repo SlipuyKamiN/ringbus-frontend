@@ -23,6 +23,7 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import uk from "date-fns/locale/uk";
 import { BsSearch } from "react-icons/bs";
+import LoadingBlinker from "components/Shared/LoadingBlinker";
 registerLocale("uk", uk);
 
 const initialOrderData = {
@@ -148,8 +149,10 @@ const OrderForm = () => {
       </div>
       <div>
         <SearchButton type="submit">
-          <BsSearch />
-          Знайти перевізника
+          <LoadingBlinker isLoading={false}>
+            <BsSearch />
+            <span>Знайти перевізника</span>
+          </LoadingBlinker>
         </SearchButton>
       </div>
     </Form>
