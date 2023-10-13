@@ -70,4 +70,8 @@ body {
         url(../../images/background-img--desktop@2x.jpg);
     }
   }
+
+  &.is-open {
+    overflow-y: hidden;
+  }
 }
