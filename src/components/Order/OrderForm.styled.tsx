@@ -5,6 +5,7 @@ import { colors, transition } from "styles/common/vars";
 
 export const Form = styled.form`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   row-gap: 20px;
 
@@ -14,7 +15,9 @@ export const Form = styled.form`
     gap: 5px;
     justify-content: space-between;
 
-    width: 50%;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
 
     &:last-of-type {
       width: 100%;
