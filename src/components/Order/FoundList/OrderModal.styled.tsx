@@ -8,7 +8,7 @@ export const ModalTable = styled.table`
 `;
 
 export const ModalTitle = styled.h2`
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.5;
   font-weight: 700;
   text-align: center;

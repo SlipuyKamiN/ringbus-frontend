@@ -7,6 +7,7 @@ import {
   InputWrapper,
   ModalBtnsList,
   ModalTable,
+  ModalTitle,
   SocialsLink,
   SocialsList,
   SubmitBtn,
@@ -25,33 +26,29 @@ const OrderModal = ({
   return (
     <Modal toggleModal={toggleModal}>
       <ModalTable>
-        <tr>
-          <th>Ваш маршрут</th>
-          <th>routeId</th>
-        </tr>
-        <tr>
-          <td>routeBeginCity</td>
-          <td>routeBeginDate</td>
-        </tr>
-        <tr>
-          <td>routeEndCity</td>
-          <td>routeEndDate</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Ваш маршрут</th>
+            <th>routeId</th>
+          </tr>
+          <tr>
+            <td>routeBeginCity</td>
+            <td>routeBeginDate</td>
+          </tr>
+          <tr>
+            <td>routeEndCity</td>
+            <td>routeEndDate</td>
+          </tr>
+        </tbody>
       </ModalTable>
-      <h2 className="modal__title">
-        {"Натисніть на іконку для зв'язку з водієм"}
-      </h2>
-      <SocialsList className="socials socials--add-margin-bottom">
-        <li className="socials__item">
-          <SocialsLink
-            href="#"
-            className="socials__link"
-            rel="noopener nofollow noreferrer"
-          >
+      <ModalTitle>{"Натисніть на іконку для зв'язку з водієм"}</ModalTitle>
+      <SocialsList>
+        <li>
+          <SocialsLink href="#" rel="noopener nofollow noreferrer">
             <MdPhone size={40} />
           </SocialsLink>
         </li>
-        <li className="socials__item">
+        <li>
           <SocialsLink
             href="#"
             target="_blank"
@@ -61,7 +58,7 @@ const OrderModal = ({
             <FaViber size={40} />
           </SocialsLink>
         </li>
-        <li className="socials__item">
+        <li>
           <SocialsLink
             href="#"
             target="_blank"
@@ -71,7 +68,7 @@ const OrderModal = ({
             <LiaTelegram size={40} />
           </SocialsLink>
         </li>
-        <li className="socials__item">
+        <li>
           <SocialsLink
             href="#"
             target="_blank"
@@ -82,7 +79,7 @@ const OrderModal = ({
           </SocialsLink>
         </li>
 
-        <li className="socials__item">
+        <li>
           <SocialsLink
             href="#"
             target="_blank"
@@ -93,12 +90,9 @@ const OrderModal = ({
           </SocialsLink>
         </li>
       </SocialsList>
-      <p className="modal__subtitle">АБО</p>
-      <h2 className="modal__title">
-        {"Залиште свої дані, з Вами зв'яжеться водій"}
-      </h2>
-      <form className="modal-form" autoComplete="off" data-modal-form>
-        <InputWrapper className="modal__form">
+      <ModalTitle>{"Залиште свої дані, з Вами зв'яжеться водій"}</ModalTitle>
+      <form autoComplete="off" data-modal-form>
+        <InputWrapper>
           <FormLabel>{"Ім'я"}</FormLabel>
           <FormInput
             type="text"
@@ -110,13 +104,12 @@ const OrderModal = ({
             pattern="[a-zA-Z\u0400-\u04ff]{3,30}"
           />
         </InputWrapper>
-        <InputWrapper className="modal__form">
+        <InputWrapper>
           <FormLabel>Телефон*</FormLabel>
           <FormInput
             type="tel"
             name="tel"
             id="tel"
-            className="modal__input"
             placeholder="+380990011222"
             required
             pattern="\+?[0-9\s\-\(\)]+"
@@ -124,26 +117,19 @@ const OrderModal = ({
             maxLength={13}
           />
         </InputWrapper>
-        <InputWrapper className="modal__textarea">
+        <InputWrapper>
           <FormLabel>Коментар</FormLabel>
           <TextArea name="comment" id="comment" placeholder="Введіть текст" />
         </InputWrapper>
-        <ModalBtnsList className="modal__btns">
+        <ModalBtnsList>
           <li>
-            <CancelBtn
-              type="button"
-              className="btn modal__btn"
-              onClick={toggleModal}
-            >
+            <CancelBtn type="button" onClick={toggleModal}>
               Скасувати
               <IoMdBackspace />
             </CancelBtn>
           </li>
           <li>
-            <SubmitBtn
-              type="submit"
-              className="btn modal__btn modal__btn--submit"
-            >
+            <SubmitBtn type="submit">
               Підтвердити
               <FaCheck />
             </SubmitBtn>
