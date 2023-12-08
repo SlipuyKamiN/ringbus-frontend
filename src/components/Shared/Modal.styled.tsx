@@ -1,5 +1,6 @@
 "use client";
 import styled from "@emotion/styled";
+import { colors } from "styles/common/vars";
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -13,6 +14,7 @@ export const Backdrop = styled.div`
   padding: 0 20px;
 
   backdrop-filter: blur(4px);
+  background-color: ${colors.primaryWhiteAlpha};
 `;
 
 export const ModalWrapper = styled.div`
@@ -25,8 +27,9 @@ export const ModalWrapper = styled.div`
   overflow-y: auto;
 
   border-radius: 16px;
+  padding: 32px;
 
-  background-color: $main-bg-color;
+  background-color: ${colors.primaryBlackAlpha};
 
   @media screen and (min-width: 768px) {
     max-width: 900px;

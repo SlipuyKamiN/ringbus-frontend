@@ -89,7 +89,7 @@ export const DateSelector = styled.input`
 export const ErrMessage = styled.span`
   max-width: 100%;
   font-size: 14px;
-  color: red;
+  color: ${colors.classicRedColor};
 `;
 
 export const SearchButton = styled.button`
@@ -114,5 +114,12 @@ export const SearchButton = styled.button`
   &:focus {
     color: ${colors.primaryBrandColor};
     border: 2px solid ${colors.primaryBrandColor};
+  }
+
+  &:disabled {
+    cursor: wait;
+    background-color: ${colors.primaryBlack};
+    color: ${colors.primaryWhiteAlpha};
+    border-color: ${colors.primaryWhiteAlpha};
   }
 `;

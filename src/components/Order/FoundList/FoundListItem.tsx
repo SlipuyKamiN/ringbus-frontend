@@ -1,3 +1,4 @@
+"use client";
 import { BsBatteryCharging } from "react-icons/bs";
 import {
   CardWarning,
@@ -15,17 +16,24 @@ import { BiWifi } from "react-icons/bi";
 import { FaBed } from "react-icons/fa6";
 import { PiTelevision } from "react-icons/pi";
 import { MdOutlineReadMore } from "react-icons/md";
+import { useState } from "react";
+import OrderModal from "./OrderModal";
 
 const FoundListItem = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
+
   return (
     <RouteCard>
       <RouteId>ID#5899</RouteId>
+      <CardWarning>
+        Зверніть увагу, що час прибуття може не співпадати, час подорожі
+        залежить від завантаженості доріг, погодних умов та ситуації на кордоні.
+      </CardWarning>
       <RouteSchedule>
-        <CardWarning>
-          Зверніть увагу, що час прибуття може не співпадати, час подорожі
-          залежить від завантаженості доріг, погодних умов та ситуації на
-          кордоні.
-        </CardWarning>
         <thead>
           <ScheduleRow>
             <ScheduleDate>departTime</ScheduleDate>
@@ -33,7 +41,7 @@ const FoundListItem = () => {
           </ScheduleRow>
         </thead>
         <tbody>
-          <ScheduleRow className="schedule__row">
+          <ScheduleRow>
             <td>origin</td>
             <td>destination</td>
           </ScheduleRow>
@@ -58,11 +66,12 @@ const FoundListItem = () => {
           <RoutePrice>
             від <span>25 EUR</span>
           </RoutePrice>
-          <SelectRouteBtn type="button">
+          <SelectRouteBtn type="button" onClick={toggleModal}>
             Замовити <MdOutlineReadMore size={30} />
           </SelectRouteBtn>
         </div>
       </RouteBottomWrapper>
+      {isModalOpen && <OrderModal toggleModal={toggleModal} />}
     </RouteCard>
   );
 };

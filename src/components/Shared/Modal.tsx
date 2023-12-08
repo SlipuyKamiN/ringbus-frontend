@@ -2,8 +2,6 @@ import { createPortal } from "react-dom";
 import { Backdrop, ModalWrapper } from "./Modal.styled";
 import { useEffect } from "react";
 
-const modalRoot = document.querySelector("#modal-root");
-
 const Modal = ({
   children,
   toggleModal,
@@ -11,6 +9,7 @@ const Modal = ({
   children: React.ReactNode;
   toggleModal: Function;
 }) => {
+  const modalRoot = document.querySelector("#modal-root");
   const handleClick = (event: MouseEvent) => {
     const target = event.target as HTMLButtonElement;
 
@@ -35,7 +34,7 @@ const Modal = ({
   });
 
   return createPortal(
-    <Backdrop data-backdrop>
+    <Backdrop>
       <ModalWrapper>{children}</ModalWrapper>
     </Backdrop>,
     modalRoot as HTMLAnchorElement

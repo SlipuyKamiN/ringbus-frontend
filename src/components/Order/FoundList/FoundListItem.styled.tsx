@@ -19,7 +19,7 @@ export const RouteId = styled.p`
   color: ${colors.primaryWhiteAlpha};
 `;
 
-export const CardWarning = styled.span`
+export const CardWarning = styled.p`
   color: ${colors.primaryWhiteAlpha};
   font-size: 15px;
   margin-bottom: 12px;
@@ -48,7 +48,7 @@ export const RouteComfortList = styled.ul`
   flex-wrap: wrap;
   align-items: center;
   gap: 5px;
-  fill: $primary-white;
+  color: ${colors.primaryWhite};
   @media screen and (min-width: 768px) {
     gap: 10px;
     & svg {
